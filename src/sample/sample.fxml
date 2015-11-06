@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="768.0" minWidth="1024.0" style="-fx-background-color: #BBDEFB;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+
+   <!-- Left block - START -->
+   <left>
+      <Pane prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </Pane>
+       <!--<Button text="Click me to start" fx:id="button1"></Button>-->
+   </left>
+   <!--Left block - STOP-->
+
+   <!-- Right block - START -->
+   <right>
+      <Pane prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+   </right>
+   <!-- Left block - STOP -->
+
+   <!-- Top block - START -->
+   <top>
+      <HBox prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: #2196F3;" BorderPane.alignment="CENTER">
+         <children>
+            <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+            <VBox prefHeight="200.0">
+               <children>
+                   <Label fx:id="pincode" style="-fx-font-weight: bold; -fx-font-size: 38;" text="Pincode: 1234" textFill="#bbdefb" VBox.vgrow="SOMETIMES">
+                     </Label>
+                  <Label text="Bid Me" textAlignment="CENTER" textFill="WHITE" VBox.vgrow="SOMETIMES">
+                     <font>
+                        <Font name="Bauhaus 93" size="64.0" />
+                     </font>
+                  </Label>
+
+                  <Button fx:id="button" defaultButton="true" mnemonicParsing="false" onAction="#buttonClicked" prefWidth="275.0" text="Start" VBox.vgrow="SOMETIMES" />
+               </children>
+            </VBox>
+            <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+   </top>
+   <!-- Top block - STOP -->
+
+   <!-- Bottom block - START -->
+   <bottom>
+      <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #2196F3;" BorderPane.alignment="CENTER">
+       <children>
+           <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+           <TextField fx:id="countdown" alignment="CENTER" editable="false" prefHeight="31.0" prefWidth="281.0" promptText="Time left" style="-fx-font-size: 24;" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                   <Insets top="20.0" />
+               </HBox.margin>
+           </TextField>
+           <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+       </children>
+   </HBox>
+   </bottom>
+   <!-- Bottom block - STOP -->
+
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+
+<!--Center parti -->
+   <center>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="800.0" minWidth="100.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="177.0" minHeight="10.0" prefHeight="37.0" vgrow="NEVER" />
+          <RowConstraints maxHeight="768.0" minHeight="409.0" prefHeight="409.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="76.0" minHeight="10.0" prefHeight="76.0" vgrow="NEVER" />
+        </rowConstraints>
+         <children>
+            <ImageView fx:id="itemImage" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="SOMETIMES">
+               <image>
+                  <!--<Image url="@../../../../Pictures/Skärmklipp.PNG" />-->
+               </image>
+               <viewport>
+                  <Rectangle2D />
+               </viewport>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </ImageView>
+            <Label text="Item description:" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+            <Label text="Bidding history:" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+            <Label alignment="CENTER" text="Highest bid:" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP" />
+            <Pane prefHeight="200.0" prefWidth="200.0" />
+            <Pane GridPane.columnIndex="1" />
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" />
+            <TextArea fx:id="itemDescription" editable="false" prefHeight="200.0" prefWidth="200.0" style="-fx-font-size: 32;" wrapText="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="SOMETIMES">
+               <GridPane.margin>
+                  <Insets left="10.0" right="10.0" top="30.0" />
+               </GridPane.margin>
+            </TextArea>
+            <TextArea fx:id="bidHistory" editable="false" maxHeight="1.7976931348623157E308"  minHeight="-Infinity" prefHeight="200.0" prefWidth="200.0" style="-fx-font-weight: bold; -fx-font-size: 42;" wrapText="true" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="SOMETIMES">
+               <GridPane.margin>
+                  <Insets left="10.0" right="10.0" top="30.0" />
+               </GridPane.margin>
+            </TextArea>
+            <Pane GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="SOMETIMES" />
+            <TextField fx:id="highestBid" alignment="CENTER" editable="false" style="-fx-font-weight: bold; -fx-font-size: 16;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            </TextField>
+         </children>
+      </GridPane>
+   </center>
+</BorderPane>
