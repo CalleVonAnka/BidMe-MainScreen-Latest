@@ -31,9 +31,8 @@ public class Controller implements Initializable {
     @FXML public ImageView itemImage;
     @FXML public Button button;
     @FXML public javafx.scene.control.Label pincode;
-    //BidItem bidItem;
-    Image newImage;
-//    @FXML public Button button1;
+
+
 
 
     //Creates a connection to Firebase Items
@@ -66,12 +65,11 @@ public class Controller implements Initializable {
     private String titleName;
     private String buyerId;
     private String itemId;
-    private Boolean isSold;
+    private Image newImage;
     private String imageString;
     private String description;
     private String type;
     private String formattedBidArray;
-    private Integer currPrice;
     private Integer startPrice;
     private String seller;
 
@@ -172,10 +170,9 @@ public class Controller implements Initializable {
                                 idHighestBidder = fireBaseUsers.get(i).getId();
                                 System.out.println("leading the auction: "+idHighestBidder);
                                 String newBid = String.valueOf(highestBidder);
-                                allBids.add(""+ newBid + "\n");
+                                allBids.add("    "+ newBid + " kr \n");
                             }
                             System.out.println(fireBaseUsers.get(i).getUsername() + " with amount of " + latestBid);
-//                            bidHistory.setText(fireBaseUsers.get(i).getUsername() + " with amount of " +latestBid);
 
                             Collections.reverse(allBids);
                             formattedBidArray = allBids.toString()
@@ -183,7 +180,7 @@ public class Controller implements Initializable {
                                     .replace("[", "")  //remove the left bracket
                                     .replace("]", "")  //remove the right bracket
                                     .trim();           //remove trailing spaces from partially initialized arrays
-                            bidHistory.setText(" " + formattedBidArray + "\n");
+                            bidHistory.setText("     " + formattedBidArray + "\n");
                             bidHistory.autosize();
                             bidHistory.setWrapText(true);
                         }
@@ -277,13 +274,7 @@ public class Controller implements Initializable {
 
     public void nextItem() {
         BidItem bidItem = fireBaseItems.get(0);
-       /* for (int i = 0; i < fireBaseUsers.size(); i++) {
-            if (bidItem.getBids().get(fireBaseUsers.get(i).getId()) != null) {
-                latestBid = bidItem.getBids().get(fireBaseUsers.get(i).getId());
-            }
-        }*/
         seconds = TIME;
-        //final Map<String, Object> activate= new HashMap<String, Object>();
         activate.put("upForSale", true);
         activate.put("sold", false);
         latestBid=0;
